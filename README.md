@@ -1,11 +1,11 @@
-# GoodBots
-Curated lists of IP addresses/whitelists of good bots and crawlers. Includes GoogleBot, BingBot, DuckDuckBot, etc.
+# آیپی‌های مورد اعتماد و بات‌های معروف
+جمع‌آوری فهرست آی‌پی‌های هر بات بصورت جداگانه از هم - گوگل‌بات - کلودفلر - بینگ - یاندکس - تلگرام - توییتر و ... .
 
-All IP-Lists are in the [CIDR-Notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) and can be used as whitelists in your webserver's firewall or as an exception for rate-limits.
+همه فهرست‌ها بر اساس [CIDR-Notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) ایجاد شده‌‎اند و می‌توانید از این فهرست‌ها در فایروال سرور استفاده کنید.
 
-Either use the [all.ips](all.ips) list or a specific service's list of IP-Addresses found in the [iplists/](iplists/) directory.
+ فایل [all.ips](all.ips) در پوشه [iplists/](iplists/) فهرستی از تمامی آی‌پی‌ها به شما خواهد داد.
 
-The lists are updated daily via a scheduled GitHub Action.
+همه فهرست‌ها بصورت دوره‌ای و زمانبندی شده در گیت‌هاب بروزرسانی می‌شوند.
 <!-- TODO: Better Readme -->
   
 ```
@@ -75,6 +75,9 @@ The lists are updated daily via a scheduled GitHub Action.
     ├── rssapi.ips
     │   IP-Addesses used by the RSSAPI.net Feed parser
     │   
+    ├── quiccloud.ips
+    │   IP-Addesses used by the Quic.cloud
+    |
     ├── stripewebhook.ips
     │   IP-Addesses used by Stripe to send out Webhooks
     │   

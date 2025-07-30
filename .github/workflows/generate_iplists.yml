@@ -73,6 +73,9 @@ jobs:
           cat $GITHUB_WORKSPACE/iplists/cloudflare.ips | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/cloudflare.ips.tmp
           mv $GITHUB_WORKSPACE/iplists/cloudflare.ips.tmp $GITHUB_WORKSPACE/iplists/cloudflare.ips
 
+      - name: Get quic cloud IP List # Source: https://quic.cloud/ips
+        run: curl -sL https://quic.cloud/ips | sed 's/<br \/>/\n/g' > $GITHUB_WORKSPACE/iplists/quiccloud.ips
+
       - name: Create merged/total IP-List (all.ips) # Use grep to merge files and ensure proper new-lines between every file, but remove any empty new-lines
         run: grep -h -v '^[[:space:]]*$' $GITHUB_WORKSPACE/iplists/*.ips | uniq -u | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/all.ips
 

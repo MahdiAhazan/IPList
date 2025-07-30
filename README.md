@@ -127,7 +127,26 @@ vi /etc/cron.d/csf_update
 30 0 * * * root rm -f /etc/csf/allbot.allow && wget -O /etc/csf/allbot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/all.ips > /dev/null 2>&1
 ```
 
-سرویس کرانجاب رو ریستارت کنید:
+انجام دستورات بدون نیاز به CRONJOB هم به این صورت خواهد بود:
+```
+rm -f /etc/csf/googlebot.allow && wget -O /etc/csf/googlebot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/googlebot.ips
+rm -f /etc/csf/yandexbot.allow && wget -O /etc/csf/yandexbot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/yandex.ips
+rm -f /etc/csf/twitterbot.allow && wget -O /etc/csf/twitterbot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/twitterbot.ips
+rm -f /etc/csf/uptimerobot.allow && wget -O /etc/csf/uptimerobot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/uptimerobot.ips
+rm -f /etc/csf/telegrambot.allow && wget -O /etc/csf/telegrambot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/telegrambot.ips
+rm -f /etc/csf/bingbot.allow && wget -O /etc/csf/bingbot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/bingbot.ips
+rm -f /etc/csf/ahrefsbot.allow && wget -O /etc/csf/ahrefsbot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/ahrefsbot.ips
+rm -f /etc/csf/pingdombot.allow && wget -O /etc/csf/pingdombot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/pingdombot.ips
+rm -f /etc/csf/bunnycdn.allow && wget -O /etc/csf/bunnycdn.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/bunnycdn.ips
+rm -f /etc/csf/cloudflare.allow && wget -O /etc/csf/cloudflare.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/cloudflare.ips
+rm -f /etc/csf/quiccloud.allow && wget -O /etc/csf/quiccloud.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/iplists/quiccloud.ips
+```
+یا
+```
+rm -f /etc/csf/allbot.allow && wget -O /etc/csf/allbot.allow https://raw.githubusercontent.com/MahdiAhazan/IPList/refs/heads/main/all.ips
+```
+
+اگر کرانجاب تنظیم کردید فراموش نکنید سرویس کرانجاب ریستارت شود:
 ```
 systemctl restart crond.service
 ```
